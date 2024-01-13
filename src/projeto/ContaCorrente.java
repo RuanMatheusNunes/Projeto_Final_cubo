@@ -17,7 +17,7 @@ public class ContaCorrente extends Conta {
 		System.out.println("Informe o seu CPF(Apenas números):");
 		String cpfcc = input.nextLine();
 		setCpf(cpfcc);
-		setStatus(true); // altera o valor do atributo status da classe mãe para true
+		setStatus(true); 
 		System.out.printf("Saldo atual: R$%.2f\n", getSaldo());
 		System.out.println("Nome: " + getTitular());
 		System.out.println("CPF: " + getCpf());
@@ -30,10 +30,10 @@ public class ContaCorrente extends Conta {
 	
 	@Override 
 	public void transferir(double valor) {
-		if (this.getStatus() == true) { // verifica se o atributo status da classe mãe está true para prosseguir com a execução do método
+		if (this.getStatus() == true) { 
 		System.out.println("Digite o valor do pix que deseja transferir: ");
 		valor = input.nextDouble();
-		if (this.getSaldo() > 0 && this.getSaldo() > valor) { //realiza o cálculo para transferir o valor que tem em saldo
+		if (this.getSaldo() > 0 && this.getSaldo() > valor) { 
 			this.setSaldo(this.getSaldo() - valor);
 			System.out.println("Pix realizado com sucesso!");
 			System.out.printf("Saldo atual: R$%.2f\n", getSaldo());
@@ -49,11 +49,11 @@ public class ContaCorrente extends Conta {
 	
 	@Override
 	public void depositar(double valor) {
-		if (this.getStatus() == true) { // verifica se o atributo status da classe mãe está true para prosseguir com a execução do método
+		if (this.getStatus() == true) { 
 		System.out.println("Digite o valor que deseja depositar: ");
 		valor = input.nextDouble();
 		 if (valor > 0) {
-			 this.setSaldo(this.getSaldo() + valor);  //realiza o cálculo para depositar o valor que tem em saldo
+			 this.setSaldo(this.getSaldo() + valor); 
 	            System.out.println("Depósito realizado com sucesso!");
 	            System.out.printf("Saldo atual: R$%.2f\n", getSaldo());
 	        } else {
@@ -67,10 +67,10 @@ public class ContaCorrente extends Conta {
 	
 	@Override
 	public void sacar(double valor) {
-		if (this.getStatus() == true) { // verifica se o atributo status da classe mãe está true para prosseguir com a execução do método
+		if (this.getStatus() == true) { 
 		System.out.println("Digite o valor de saque: ");
 		valor = input.nextDouble();
-		if (this.getSaldo() > 0 && this.getSaldo() > valor) {  //realiza o cálculo para sacar o valor que tem em saldo
+		if (this.getSaldo() > 0 && this.getSaldo() > valor) { 
 			this.setSaldo(this.getSaldo() - valor);
 			System.out.println("Saque realizado com sucesso!");
 			System.out.printf("Saldo atual: R$%.2f\n", getSaldo());
@@ -86,7 +86,7 @@ public class ContaCorrente extends Conta {
 	
 	@Override
 	public void emprestimo(double valor) {
-		if (this.getStatus() == true) { // verifica se o atributo status da classe mãe está true para prosseguir com a execução do método
+		if (this.getStatus() == true) { 
 		System.out.println("Informe o valor do empréstimo que deseja obter: ");
 		valor = input.nextDouble();
 		double valorjuros = valor * 0.1 + valor;  
@@ -105,7 +105,7 @@ public class ContaCorrente extends Conta {
 	
 	@Override
 	public void rendimento(double juros) {
-		if (this.getStatus() == true) { // verifica se o atributo status da classe mãe está true para prosseguir com a execução do método
+		if (this.getStatus() == true) { 
 			juros = 0.0114;
 			System.out.println("Sua conta corrente está rendendo 100% da taxa SELIC que é equivalente a 1,14% ao mês");
 			double bruto = getSaldo() * juros;
@@ -156,7 +156,7 @@ public class ContaCorrente extends Conta {
 	
 	@Override
 	public void extrato() {
-		if (this.getStatus() == true) { // verifica se o atributo status da classe mãe está true para prosseguir com a execução do método
+		if (this.getStatus() == true) { 
 		System.out.printf("Saldo atual da conta corrente é R$%.2f\n", getSaldo());
         } else {
             System.out.println("Não é possível consultar o extrato, a conta ainda não foi criada.");
@@ -164,11 +164,11 @@ public class ContaCorrente extends Conta {
 	}
 	
 	@Override
-	public void acessarCC() {
-		boolean sair = false; // necessário para funcionar com o while, inicializa com false.
-		if (this.getStatus() == true) { // verifica se o atributo status da classe mãe está true para prosseguir com a execução do método
-		while(!sair) {  // while deixa em loop esse acesso ao menu através do switch com as opções para acessar os métodos
-		System.out.println("====================================");
+	public void acessarContaCorrente() {
+		boolean sair = false; 
+		if (this.getStatus() == true) { 
+		while(!sair) {  
+		System.out.println("----------------------------------");
 		System.out.println("[1] Depositar em conta corrente");
 		System.out.println("[1] Depositar em conta corrente");
 		System.out.println("[2] Sacar em conta corrente");
@@ -177,10 +177,10 @@ public class ContaCorrente extends Conta {
 		System.out.println("[5] Rendimento da conta corrente");
 		System.out.println("[6] Exibir o extrato conta corrente");
 		System.out.println("[7] Menu Principal");
-		System.out.println("====================================");
+		System.out.println("-----------------------------------");
 		
-		int opcao2 = input.nextInt(); // variável necessária para funcionar com o switch
-		switch (opcao2) { //switch para acessar os métodos através das opções
+		int opcao2 = input.nextInt(); 
+		switch (opcao2) { 
 		case 1:
 			depositar(opcao2);;
 			break;
@@ -207,7 +207,7 @@ public class ContaCorrente extends Conta {
 			
 		case 7:
 			if (sair) {
-			CuboBank.main(null); // faz com que o menu através do switch retorne ao método main
+			HeroBank.main(null); 
 			}
 			sair = true;
 			break;

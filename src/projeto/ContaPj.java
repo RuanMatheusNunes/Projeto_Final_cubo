@@ -2,7 +2,7 @@ package projeto;
 
 import java.util.Scanner;
 
-public class ContaPJ extends Conta{
+public class ContaPj extends Conta{
 	Scanner input = new Scanner(System.in);
 	
 	@Override
@@ -16,7 +16,7 @@ public class ContaPJ extends Conta{
 		String cnpj = input.nextLine();
 		setCnpj(cnpj);
 		setNumContaPJ();
-		setStatus(true); // altera o valor do atributo status da classe mãe para true
+		setStatus(true); 
 		System.out.printf("Saldo atual: R$%.2f\n", getSaldoPJ());
 		System.out.println("Nome: " + getTitularPJ());
 		System.out.println("CPF: " + getCnpj());
@@ -29,10 +29,10 @@ public class ContaPJ extends Conta{
 	
 	@Override 
 	public void transferir(double valor) {
-		if (this.getStatus() == true) { // verifica se o atributo status da classe mãe está true para prosseguir com a execução do método
+		if (this.getStatus() == true) { 
 		System.out.println("Digite o valor do pix que deseja transferir: ");
 		valor = input.nextDouble();
-		if (this.getSaldoPJ() > 0 && this.getSaldoPJ() > valor) { //realiza o cálculo para transferir o valor que tem em saldo
+		if (this.getSaldoPJ() > 0 && this.getSaldoPJ() > valor) { 
 			this.setSaldo(this.getSaldo() - valor);
 			this.setSaldoPJ(this.getSaldoPJ() - valor);
 			System.out.println("Pix realizado com sucesso!");
@@ -49,11 +49,11 @@ public class ContaPJ extends Conta{
 	
 	@Override
 	public void depositar(double valor) {
-		if (this.getStatus() == true) { // verifica se o atributo status da classe mãe está true para prosseguir com a execução do método
+		if (this.getStatus() == true) { 
 		System.out.println("Digite o valor que deseja depositar: ");
 		valor = input.nextDouble();
 		 if (valor > 0) {
-			 this.setSaldoPJ(this.getSaldoPJ() + valor);  //realiza o cálculo para depositar o valor no saldo
+			 this.setSaldoPJ(this.getSaldoPJ() + valor);  
 	            System.out.println("Depósito realizado com sucesso!");
 	            System.out.printf("Saldo atual: R$%.2f\n", getSaldoPJ());
 	        } else {
@@ -67,10 +67,10 @@ public class ContaPJ extends Conta{
 	
 	@Override
 	public void sacar(double valor) {
-		if (this.getStatus() == true) { // verifica se o atributo status da classe mãe está true para prosseguir com a execução do método
+		if (this.getStatus() == true) { 
 		System.out.println("Digite o valor de saque: ");
 		valor = input.nextDouble();
-		if (this.getSaldoPJ() > 0 && this.getSaldoPJ() > valor) {  //realiza o cálculo para sacar o valor que tem em saldo
+		if (this.getSaldoPJ() > 0 && this.getSaldoPJ() > valor) {  
 			this.setSaldoPJ(this.getSaldoPJ() - valor);
 			System.out.println("Saque realizado com sucesso!");
 			System.out.printf("Saldo atual: R$%.2f\n", getSaldoPJ());
@@ -86,7 +86,7 @@ public class ContaPJ extends Conta{
 	
 	@Override
 	public void emprestimo(double valor) {
-		if (this.getStatus() == true) { // verifica se o atributo status da classe mãe está true para prosseguir com a execução do método
+		if (this.getStatus() == true) { 
 		System.out.println("Informe o valor do empréstimo que deseja obter: ");
 		valor = input.nextDouble();
 		double valorjuros = valor * 0.1 + valor;
@@ -107,7 +107,7 @@ public class ContaPJ extends Conta{
 	
 	@Override
 	public void extrato() {
-		if (this.getStatus() == true) { // verifica se o atributo status da classe mãe está true para prosseguir com a execução do método
+		if (this.getStatus() == true) { 
 		System.out.printf("Saldo atual da conta corrente é R$%.2f\n", getSaldoPJ());
         } else {
             System.out.println("Não é possível consultar o extrato, a conta ainda não foi criada.");
@@ -116,20 +116,20 @@ public class ContaPJ extends Conta{
 	
 	@Override
 	public void acessarPJ() {
-		boolean sair = false; // necessário para funcionar com o while, inicializa com false.
-		if (this.getStatus() == true) { // verifica se o atributo status da classe mãe está true para prosseguir com a execução do método
-		while(!sair) {  // while deixa em loop esse acesso ao menu através do switch com as opções para acessar os métodos
-		System.out.println("====================================");
+		boolean sair = false; 
+		if (this.getStatus() == true) { 
+		while(!sair) {  
+		System.out.println("-------------------------------");
 		System.out.println("[1] Depositar em conta PJ");
 		System.out.println("[2] Sacar em conta PJ");
 		System.out.println("[3] Transferir em conta PJ");
 		System.out.println("[4] Solicitar empréstimo");
 		System.out.println("[5] Exibir o extrato conta PJ");
 		System.out.println("[6] Menu Principal");
-		System.out.println("====================================");
+		System.out.println("--------------------------------");
 		
-		int opcao2 = input.nextInt(); // variável necessária para funcionar com o switch
-		switch (opcao2) { //switch para acessar os métodos através das opções
+		int opcao2 = input.nextInt(); 
+		switch (opcao2) {
 		case 1:
 			depositar(opcao2);;
 			break;
@@ -152,7 +152,7 @@ public class ContaPJ extends Conta{
 			
 		case 6:
 			if (sair) {
-			CuboBank.main(null); // faz com que o menu através do switch retorne ao método main
+			HeroBank.main(null); 
 			}
 			sair = true;
 			break;
