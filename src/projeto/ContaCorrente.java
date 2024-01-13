@@ -10,7 +10,7 @@ public class ContaCorrente extends Conta {
 	@Override
 	public void abrirConta() {
 		this.setSaldo(0);
-		System.out.println("Seja bem vindo ao Cubo Bank!");
+		System.out.println("Seja bem vindo ao Hero Bank!");
 		System.out.println("Vamos realizar a criação de sua conta corrente, por favor, digite o seu nome: ");
 		String nomeTitular = input.nextLine();
 		setTitular(nomeTitular);
@@ -24,7 +24,7 @@ public class ContaCorrente extends Conta {
 		System.out.println("Número da Agência: " + getNumAgencia());
 		System.out.println("Número da conta: " + getNumConta());
 		System.out.println("Conta corrente criada com sucesso!");
-		System.out.println("====================================");
+		System.out.println("----------------------------------");
 		
 	}
 	
@@ -169,7 +169,6 @@ public class ContaCorrente extends Conta {
 		if (this.getStatus() == true) { 
 		while(!sair) {  
 		System.out.println("----------------------------------");
-		System.out.println("[1] Depositar em conta corrente");
 		System.out.println("[1] Depositar em conta corrente");
 		System.out.println("[2] Sacar em conta corrente");
 		System.out.println("[3] Transferir em conta corrente");

@@ -53,8 +53,6 @@ public class Conta {
 		this.saldoContaPj = saldoPJ;
 	}
 
-
-	
 	
 	public void abrirConta() {
 		

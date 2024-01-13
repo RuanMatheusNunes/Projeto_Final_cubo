@@ -23,7 +23,7 @@ public class ContaPj extends Conta{
 		System.out.println("Número da Agência: " + getNumAgencia());
 		System.out.println("Número da conta: " + getNumContaPJ());
 		System.out.println("Conta corrente criada com sucesso!");
-		System.out.println("====================================");
+		System.out.println("----------------------------------");
 		
 	}
 	
