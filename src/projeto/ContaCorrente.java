@@ -89,11 +89,11 @@ public class ContaCorrente extends Conta {
 		if (this.getStatus() == true) { 
 		System.out.println("Informe o valor do empréstimo que deseja obter: ");
 		valor = input.nextDouble();
-		double valorjuros = valor * 0.1 + valor;  
+		double valorjuros = valor * 0.15 + valor;  
 		System.out.println("Em quantas parcelas deseja dividir?");
 		int parcelas = input.nextInt();
 		double valorparcelas = valorjuros / parcelas;
-		System.out.printf("Seu empréstimo de R$%.2f dividido em %d parcelas com 10%% de juros ficou da sequinte forma: \n", valor, parcelas);
+		System.out.printf("Seu empréstimo de R$%.2f dividido em %d parcelas com 15%% de juros ficou da sequinte forma: \n", valor, parcelas);
 		System.out.printf("Valor total com juros: R$%.2f\n" ,valorjuros);
 		System.out.printf("Valor das parcelas: R$%.2f\n" ,valorparcelas);
 		
