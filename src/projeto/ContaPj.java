@@ -42,7 +42,7 @@ public class ContaPj extends Conta{
 
 		}
         } else {
-            System.out.println("Não é possível realizar transferência, a conta ainda não foi criada.");
+        	 System.out.println("A transferência não pode ser concluída, pois a conta poupança ainda não foi criada.");
         }
 
 	}
@@ -60,7 +60,7 @@ public class ContaPj extends Conta{
 	            System.out.println("Depósito não realizado, valor inválido.");
 	        }
         } else {
-            System.out.println("Não é possível realizar depósito, a conta ainda não foi criada.");
+            System.out.println("A realização de depósitos não é possível, pois a conta poupança ainda não foi criada.");
         }
 
 	}

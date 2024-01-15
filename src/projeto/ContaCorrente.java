@@ -11,7 +11,7 @@ public class ContaCorrente extends Conta {
 	public void abrirConta() {
 		this.setSaldo(0);
 		System.out.println("Seja bem vindo ao Hero Bank!");
-		System.out.println("Vamos realizar a criação de sua conta corrente, por favor, digite o seu nome: ");
+		System.out.println("Vamos iniciar o processo de criação da sua conta poupança. Por favor, insira o seu nome: ");
 		String nomeTitular = input.nextLine();
 		setTitular(nomeTitular);
 		System.out.println("Informe o seu CPF(Apenas números):");
