@@ -42,7 +42,7 @@ public class ContaCorrente extends Conta {
 
 		}
         } else {
-            System.out.println("Não é possível realizar transferência, a conta ainda não foi criada.");
+            System.out.println("A transferência não pode ser concluída, pois a conta ainda não foi criada.");
         }
 
 	}
@@ -60,7 +60,7 @@ public class ContaCorrente extends Conta {
 	            System.out.println("Depósito não realizado, valor inválido.");
 	        }
         } else {
-            System.out.println("Não é possível realizar depósito, a conta ainda não foi criada.");
+            System.out.println("A realização de depósitos não está disponível, pois a conta ainda não foi criada.");
         }
 
 	}
@@ -79,7 +79,7 @@ public class ContaCorrente extends Conta {
 
 		}
         } else {
-            System.out.println("Não é possível realizar saque, a conta ainda não foi criada.");
+            System.out.println("A realização de saques não é possível, pois a conta ainda não foi criada.");
         }
 
 	}
@@ -98,7 +98,7 @@ public class ContaCorrente extends Conta {
 		System.out.printf("Valor das parcelas: R$%.2f\n" ,valorparcelas);
 		
 		}else {
-            System.out.println("Não é possível realizar o empréstimo, a conta ainda não foi criada.");
+            System.out.println("A concessão de empréstimo não é possível, pois a conta ainda não foi criada.");
         }
 
 	}
@@ -106,50 +106,54 @@ public class ContaCorrente extends Conta {
 	@Override
 	public void rendimento(double juros) {
 		if (this.getStatus() == true) { 
-			juros = 0.0114;
-			System.out.println("Sua conta corrente está rendendo 100% da taxa SELIC que é equivalente a 1,14% ao mês");
+			juros = 0.0132;
+			System.out.println("Sua conta corrente está rendendo 100% da taxa SELIC que é equivalente a 1,32% ao mês");
 			double bruto = getSaldo() * juros;
 			
-			System.out.println("Por quantos dias pretende deixar o valor aplicado na conta corrente? Será cobrado um desconto de IR dependendo do tempo que o valor fica aplicado");
+			System.out.println("Até quantos dias você planeja manter o valor aplicado na conta corrente? Um desconto de Imposto de Renda (IR) será aplicado, e a taxa dependerá do período pelo qual o valor permanecer investido.");
 			int dias = input.nextInt();	
 			if (dias > 0 && dias <= 180) {
-				double liquido = bruto - (bruto * 0.225);
-				System.out.println("Para " +dias+" dias o desconto do IR é de 22,5% sobre o rendimento");
-				System.out.printf("Rendimento bruto: R$%.2f\n", bruto);
-				System.out.printf("Rendimento líquido: R$%.2f\n", liquido);
-				System.out.printf("Valor estimado com o rendimento: R$%.2f\n", liquido + getSaldo());
-				System.out.println("Obs: Valor será aplicado apenas no mês seguinte");	
+				double liquido = bruto - (bruto * 0.220);
+				System.out.println("Para " + dias + " dias, a taxa de imposto de renda é de 22% sobre o ganho");
+				System.out.printf("Ganho bruto: R$%.2f\n", bruto);
+				System.out.printf("Ganho líquido: R$%.2f\n", liquido);
+				System.out.printf("Valor estimado após o ganho: R$%.2f\n", liquido + getSaldo());
+				System.out.println("Nota: O valor será aplicado apenas no próximo mês");
+
 				
 			}else if (dias >= 181 && dias <= 360){
 				double liquido = bruto - (bruto * 0.20);
-				System.out.println("Para " +dias+" dias o desconto do IR é de 20% sobre o rendimento");
-				System.out.printf("Rendimento bruto: R$%.2f\n", bruto);
-				System.out.printf("Rendimento líquido: R$%.2f\n", liquido);
-				System.out.printf("Valor estimado com o rendimento: R$%.2f\n", liquido + getSaldo());
-				System.out.println("Obs: Valor será aplicado apenas no mês seguinte");	
+				System.out.println("Para " + dias + " dias, a taxa de imposto de renda é de 20% sobre o ganho");
+				System.out.printf("Ganho bruto: R$%.2f\n", bruto);
+				System.out.printf("Ganho líquido: R$%.2f\n", liquido);
+				System.out.printf("Valor estimado após o ganho: R$%.2f\n", liquido + getSaldo());
+				System.out.println("Nota: O valor será aplicado apenas no próximo mês");
+	
 				
 			}else if (dias >= 361 && dias <= 720){
 				double liquido = bruto - (bruto * 0.175);
-				System.out.println("Para " +dias+" dias o desconto do IR é de 17,5% sobre o rendimento");
-				System.out.printf("Rendimento bruto: R$%.2f\n", bruto);
-				System.out.printf("Rendimento líquido: R$%.2f\n", liquido);
-				System.out.printf("Valor estimado com o rendimento: R$%.2f\n", liquido + getSaldo());
-				System.out.println("Obs: Valor será aplicado apenas no mês seguinte");
+				System.out.println("Para " + dias + " dias, a taxa de imposto de renda é de 17,5% sobre o ganho");
+				System.out.printf("Ganho bruto: R$%.2f\n", bruto);
+				System.out.printf("Ganho líquido: R$%.2f\n", liquido);
+				System.out.printf("Valor estimado após o ganho: R$%.2f\n", liquido + getSaldo());
+				System.out.println("Nota: O valor será aplicado apenas no próximo mês");
+
 				
 			}else if (dias > 720){
 				double liquido = bruto - (bruto * 0.15);
-				System.out.println("Para " +dias+" dias, o desconto do IR é de 15% sobre o rendimento");
-				System.out.printf("Rendimento bruto: R$%.2f\n", bruto);
-				System.out.printf("Rendimento líquido: R$%.2f\n", liquido);
-				System.out.printf("Valor estimado com o rendimento: R$%.2f\n", liquido + getSaldo());
-				System.out.println("Obs: Valor será aplicado apenas no mês seguinte");	
+				System.out.println("Para " + dias + " dias, a taxa de imposto de renda é de 15% sobre o ganho");
+				System.out.printf("Ganho bruto: R$%.2f\n", bruto);
+				System.out.printf("Ganho líquido: R$%.2f\n", liquido);
+				System.out.printf("Valor estimado após o ganho: R$%.2f\n", liquido + getSaldo());
+				System.out.println("Nota: O valor será aplicado apenas no próximo mês");
+
 				
 			}else {
 				System.out.println("Opção inválida");
 			}
 			
 		}else {
-            System.out.println("Não é possível consultar o rendimento, a conta corrente ainda não foi criada.");
+            System.out.println("A consulta de rendimentos não é possível, pois a conta corrente ainda não foi criada.");
         }
 
 	}
@@ -159,7 +163,7 @@ public class ContaCorrente extends Conta {
 		if (this.getStatus() == true) { 
 		System.out.printf("Saldo atual da conta corrente é R$%.2f\n", getSaldo());
         } else {
-            System.out.println("Não é possível consultar o extrato, a conta ainda não foi criada.");
+            System.out.println("A consulta do extrato não é possível, pois a conta ainda não foi criada.");
         }
 	}
 	
@@ -218,7 +222,7 @@ public class ContaCorrente extends Conta {
 			}
 		}
 		}else {
-            System.out.println("Não é possível acessar, a conta corrente ainda não foi criada.");
+            System.out.println("O acesso não é possível, pois a conta corrente ainda não foi criada.");
         }
 	}
 
