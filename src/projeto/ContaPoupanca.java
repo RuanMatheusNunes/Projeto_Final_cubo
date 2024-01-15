@@ -9,8 +9,8 @@ public class ContaPoupanca extends Conta {
 	@Override
 	public void abrirConta() {
 		this.setSaldoCP(0);
-		System.out.println("Seja bem vindo ao Cubo Bank!");
-		System.out.println("Vamos realizar a criação de sua conta poupança, por favor, digite o seu nome: ");
+		System.out.println("Seja bem vindo ao Hero Bank!");
+		System.out.println("Vamos iniciar o processo de criação da sua conta poupança. Por favor, insira o seu nome: ");
 		String nomeTitularcp = input.nextLine();
 		setTitular(nomeTitularcp);
 		System.out.println("Informe o seu CPF(Apenas números):");
