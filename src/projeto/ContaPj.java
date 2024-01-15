@@ -8,7 +8,7 @@ public class ContaPj extends Conta{
 	@Override
 	public void abrirConta() {
 		this.setSaldoPJ(0); 
-		System.out.println("Seja bem vindo ao Cubo Bank!");
+		System.out.println("Seja bem vindo ao Hero Bank!");
 		System.out.println("Vamos realizar a criação de sua conta PJ, por favor, digite o nome da sua empresa: ");
 		String nomeTitularPJ = input.nextLine();
 		setTitularPJ(nomeTitularPJ);

@@ -89,7 +89,7 @@ public class ContaPoupanca extends Conta {
 			System.out.printf("Valor estimado com o rendimento: R$%.2f\n", getSaldoCP() * valor + getSaldoCP());
 			System.out.println("Obs: Valor será aplicado apenas no mês seguinte");
 		}else {
-            System.out.println("A consulta de rendimentos não é possível, pois a conta poupança ainda não foi criada.");
+            System.out.println("A concessão de empréstimo não é possível, pois a conta ainda não foi criada.");
         }
 		
 	}
