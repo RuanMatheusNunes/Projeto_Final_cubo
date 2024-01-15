@@ -41,7 +41,7 @@ public class ContaPoupanca extends Conta {
 			System.out.println("Pix não realizado, pix insuficiente.");
 		}
         } else {
-            System.out.println("Não é possível realizar transferência, a conta poupança ainda não foi criada.");
+            System.out.println("A transferência não pode ser concluída, pois a conta poupança ainda não foi criada.");
         }
 	}
 	
@@ -58,7 +58,7 @@ public class ContaPoupanca extends Conta {
 	            System.out.println("Depósito não realizado, valor inválido.");
 	        }
         } else {
-            System.out.println("Não é possível realizar depósito, a conta poupança ainda não foi criada.");
+            System.out.println("A realização de depósitos não é possível, pois a conta poupança ainda não foi criada.");
         }
 	}
 	
@@ -75,7 +75,7 @@ public class ContaPoupanca extends Conta {
 			System.out.println("Saque não realizado, saldo insuficiente.");
 		}
         } else {
-            System.out.println("Não é possível realizar saque, a conta poupança ainda não foi criada.");
+            System.out.println("A realização de saques não é possível, pois a conta poupança ainda não foi criada.");
         }
 		
 	}
@@ -89,7 +89,7 @@ public class ContaPoupanca extends Conta {
 			System.out.printf("Valor estimado com o rendimento: R$%.2f\n", getSaldoCP() * valor + getSaldoCP());
 			System.out.println("Obs: Valor será aplicado apenas no mês seguinte");
 		}else {
-            System.out.println("Não é possível consultar o rendimento, a conta poupança ainda não foi criada.");
+            System.out.println("A consulta de rendimentos não é possível, pois a conta poupança ainda não foi criada.");
         }
 		
 	}
@@ -99,7 +99,7 @@ public class ContaPoupanca extends Conta {
 		if (this.getStatus() == true) { 
 		System.out.printf("Saldo atual da conta poupança é R$%.2f\n", getSaldoCP());
         } else {
-            System.out.println("Não é possível consultar o extrato, a conta poupança ainda não foi criada.");
+            System.out.println("A consulta do extrato não é possível, pois a conta poupança ainda não foi criada.");
         }
 		
 	}
@@ -153,7 +153,7 @@ public class ContaPoupanca extends Conta {
 			}
 		}
 		}else {
-            System.out.println("Não é possível acessar, a conta poupança ainda não foi criada.");
+            System.out.println("O acesso não é possível, pois a conta poupança ainda não foi criada.");
         }
 		
 	}
