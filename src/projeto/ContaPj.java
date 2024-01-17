@@ -79,7 +79,7 @@ public class ContaPj extends Conta{
 
 		}
         } else {
-            System.out.println("Não é possível realizar saque, a conta ainda não foi criada.");
+            System.out.println("A realização de saques não é possível, pois a conta poupança ainda não foi criada.");
         }
 
 	}
@@ -164,7 +164,7 @@ public class ContaPj extends Conta{
 			}
 		}
 		}else {
-            System.out.println("Não é possível acessar, a conta PJ ainda não foi criada.");
+            System.out.println("O acesso não é possível, pois a ContaPJ ainda não foi criada.");
         }
 	}
 
