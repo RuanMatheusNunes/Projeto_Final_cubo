@@ -70,7 +70,10 @@ public class ContaPoupanca extends Conta {
 		if (this.getStatus() == true) {
 		System.out.println("Digite o valor de saque: ");
 		valor = input.nextDouble();
-		if (this.getSaldoCP() > 0 && this.getSaldoCP() > valor) { 
+		if (valor <= 0) {
+			System.out.println("Valor do saque não pode ser nagativo");
+		}
+		else if (this.getSaldoCP() > 0 && this.getSaldoCP() > valor) { 
 			this.setSaldoCP(this.getSaldoCP() - valor);
 			System.out.println("Saque realizado com sucesso!");
 			System.out.printf("Saldo atual: R$%.2f\n", getSaldoCP());
