@@ -32,7 +32,10 @@ public class ContaPoupanca extends Conta {
 		if (this.getStatus() == true) { 
 		System.out.println("Digite o valor do pix que deseja transferir: ");
 		valor = input.nextDouble();
-		if (this.getSaldoCP() > 0 && this.getSaldoCP() > valor) { 
+		if (valor <= 0) {
+			System.out.println("Valor do saque não pode ser nagativo");
+		}
+		else if (this.getSaldoCP() > 0 && this.getSaldoCP() > valor) { 
 			this.setSaldo(this.getSaldo() - valor);
 			this.setSaldoCP(this.getSaldoCP() - valor);
 			System.out.println("Pix realizado com sucesso!");

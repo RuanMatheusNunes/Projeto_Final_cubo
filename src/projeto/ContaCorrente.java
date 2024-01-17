@@ -33,7 +33,10 @@ public class ContaCorrente extends Conta {
 		if (this.getStatus() == true) { 
 		System.out.println("Digite o valor do pix que deseja transferir: ");
 		valor = input.nextDouble();
-		if (this.getSaldo() > 0 && this.getSaldo() > valor) { 
+		if (valor <= 0) {
+			System.out.println("Valor do saque não pode ser nagativo");
+		}
+		else if (this.getSaldo() > 0 && this.getSaldo() > valor) { 
 			this.setSaldo(this.getSaldo() - valor);
 			System.out.println("Pix realizado com sucesso!");
 			System.out.printf("Saldo atual: R$%.2f\n", getSaldo());
@@ -70,10 +73,16 @@ public class ContaCorrente extends Conta {
 		if (this.getStatus() == true) { 
 		System.out.println("Digite o valor de saque: ");
 		valor = input.nextDouble();
-		if (this.getSaldo() > 0 && this.getSaldo() > valor) { 
+		if (valor <= 0) {
+			System.out.println("Valor do saque não pode ser nagativo");
+		}
+		else if (this.getSaldo() > 0 && this.getSaldo() > valor) { 
 			this.setSaldo(this.getSaldo() - valor);
 			System.out.println("Saque realizado com sucesso!");
 			System.out.printf("Saldo atual: R$%.2f\n", getSaldo());
+			
+		
+			
 		} else {
 			System.out.println("Saque não realizado, saldo insuficiente.");
 
