@@ -19,10 +19,10 @@ public class ContaPj extends Conta{
 		setStatus(true); 
 		System.out.printf("Saldo atual: R$%.2f\n", getSaldoPJ());
 		System.out.println("Nome: " + getTitularPJ());
-		System.out.println("CPF: " + getCnpj());
+		System.out.println("CNPJ: " + getCnpj());
 		System.out.println("Número da Agência: " + getNumAgencia());
 		System.out.println("Número da conta: " + getNumContaPJ());
-		System.out.println("Conta corrente criada com sucesso!");
+		System.out.println("Conta jurídica criada com sucesso!");
 		System.out.println("----------------------------------");
 		
 	}
@@ -32,7 +32,10 @@ public class ContaPj extends Conta{
 		if (this.getStatus() == true) { 
 		System.out.println("Digite o valor do pix que deseja transferir: ");
 		valor = input.nextDouble();
-		if (this.getSaldoPJ() > 0 && this.getSaldoPJ() > valor) { 
+		if (valor <= 0) {
+			System.out.println("Valor do saque não pode ser nagativo");
+		}
+		else if  (this.getSaldoPJ() > 0 && this.getSaldoPJ() > valor) { 
 			this.setSaldo(this.getSaldo() - valor);
 			this.setSaldoPJ(this.getSaldoPJ() - valor);
 			System.out.println("Pix realizado com sucesso!");
@@ -70,7 +73,10 @@ public class ContaPj extends Conta{
 		if (this.getStatus() == true) { 
 		System.out.println("Digite o valor de saque: ");
 		valor = input.nextDouble();
-		if (this.getSaldoPJ() > 0 && this.getSaldoPJ() > valor) {  
+		if (valor <= 0) {
+			System.out.println("Valor do saque não pode ser nagativo");
+		}
+		else if  (this.getSaldoPJ() > 0 && this.getSaldoPJ() > valor) {  
 			this.setSaldoPJ(this.getSaldoPJ() - valor);
 			System.out.println("Saque realizado com sucesso!");
 			System.out.printf("Saldo atual: R$%.2f\n", getSaldoPJ());
