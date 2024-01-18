@@ -24,7 +24,7 @@ public class ContaPoupanca extends Conta {
 		System.out.println("Número da Agência: " + getNumAgencia());
 		System.out.println("Número da conta: " + getNumContaCP());
 		System.out.println("Conta poupança criada com sucesso!");
-		System.out.println("----------------------------------");
+		System.out.println("------------------------------------");
 		
 	}
 

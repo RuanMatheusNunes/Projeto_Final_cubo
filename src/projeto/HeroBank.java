@@ -63,12 +63,12 @@ public class HeroBank {
 			break;
 			
 		case 7:
-			System.out.println("Saindo...");
+			System.out.println("Obrigado pro utilizar os serviços da HeroBank, Volte sempre. ");
 			sair = true;
 			break;
 
 		default:
-			System.out.println("Opção inválida");
+			System.out.println("Escolha não válida, escolha outra opção...");
 			break;
 			
 		
