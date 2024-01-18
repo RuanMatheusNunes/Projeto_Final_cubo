@@ -47,8 +47,10 @@ public class HeroBank {
 			break;
 			
 		case 3:
-			pj.setNumConta();
-			pj.abrirConta();
+		    pj.setNumConta();
+		    pj.abrirConta();
+		    break;  
+
 
 		case 4:
             cc.acessarContaCorrente();
@@ -63,7 +65,7 @@ public class HeroBank {
 			break;
 			
 		case 7:
-			System.out.println("Obrigado pro utilizar os serviços da HeroBank, Volte sempre. ");
+			System.out.println("Obrigado por utilizar os serviços da HeroBank, Volte sempre. ");
 			sair = true;
 			break;
 
